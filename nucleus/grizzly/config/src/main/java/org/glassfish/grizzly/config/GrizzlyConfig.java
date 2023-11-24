@@ -100,9 +100,9 @@ public class GrizzlyConfig {
         synchronized (listeners) {
             for (GrizzlyListener listener : listeners) {
                 try {
-                    logPortStatus(listener.getPort());
+                    logPortStatus("Listener Not Stopped", listener.getPort());
                     listener.stop();
-                    logPortStatus(listener.getPort());
+                    logPortStatus("Listener Stopped", listener.getPort());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -121,9 +121,9 @@ public class GrizzlyConfig {
         synchronized (listeners) {
             for (GrizzlyListener listener : listeners) {
                 try {
-                    logPortStatus(listener.getPort());
+                    logPortStatus("Listener Not Stopped", listener.getPort());
                     listener.stop();
-                    logPortStatus(listener.getPort());
+                    logPortStatus("Listener Stopped", listener.getPort());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -140,11 +140,11 @@ public class GrizzlyConfig {
         return "true".equals(v) || "yes".equals(v) || "on".equals(v) || "1".equals(v);
     }
 
-    private static void logPortStatus(int port) {
+    private static void logPortStatus(String details, int port) {
         try (ServerSocket ignored = new ServerSocket(port)) {
-            Logger.getLogger(GrizzlyConfig.class.getName()).severe("Port " + port + " is not in use");
+            Logger.getLogger(GrizzlyConfig.class.getName()).severe(details + " | Port " + port + " is not in use");
         } catch (Exception e) {
-            Logger.getLogger(GrizzlyConfig.class.getName()).severe("Something is running on port " + port);
+            Logger.getLogger(GrizzlyConfig.class.getName()).severe(details + " | Something is running on port " + port);
         }
     }
 }
