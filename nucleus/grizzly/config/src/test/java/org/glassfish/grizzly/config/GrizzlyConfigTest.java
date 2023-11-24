@@ -93,7 +93,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             Assert.assertEquals("<html><body>You've found the server on port 38084</body></html>", content3);
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -122,7 +122,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             assertTrue("Should find the NetworkListener in the list of references from ThreadPool", found);
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -136,7 +136,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             Assert.assertEquals("5", threadPool.getMaxThreadPoolSize());
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -157,7 +157,6 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
         } finally {
             if (grizzlyConfig != null) {
                 grizzlyConfig.shutdownNetwork();
-                grizzlyConfig.shutdown();
             }
         }
     }
@@ -177,7 +176,6 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
         } finally {
             if (grizzlyConfig != null) {
                 grizzlyConfig.shutdownNetwork();
-                grizzlyConfig.shutdown();
             }
         }
     }
@@ -199,7 +197,6 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
         } finally {
             if (grizzlyConfig != null) {
                 grizzlyConfig.shutdownNetwork();
-                grizzlyConfig.shutdown();
             }
         }
     }
@@ -238,7 +235,6 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
         } finally {
             if (grizzlyConfig != null) {
                 grizzlyConfig.shutdownNetwork();
-                grizzlyConfig.shutdown();
             }
         }
     }
@@ -265,7 +261,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
                     getContent(new URL("https://localhost:38085").openConnection()));
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -288,7 +284,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             grizzlyConfig.setupNetwork();
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -300,7 +296,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             grizzlyConfig.setupNetwork();
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -336,7 +332,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
             
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }
@@ -382,7 +378,7 @@ public class GrizzlyConfigTest extends BaseTestGrizzlyConfig {
 
         } finally {
             if (grizzlyConfig != null) {
-                grizzlyConfig.shutdown();
+                grizzlyConfig.shutdownNetwork();
             }
         }
     }

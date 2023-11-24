@@ -117,21 +117,6 @@ public class GrizzlyConfig {
         }
     }
 
-    public void shutdown() throws IOException {
-        synchronized (listeners) {
-            for (GrizzlyListener listener : listeners) {
-                try {
-                    logPortStatus("Shutdown | Listener Not Stopped", listener.getPort());
-                    listener.stop();
-                    logPortStatus("Shutdown | Listener Stopped", listener.getPort());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            listeners.clear();
-        }
-    }
-
     public static boolean toBoolean(String value) {
         if (value == null || value.length() == 0) {
             return false;
