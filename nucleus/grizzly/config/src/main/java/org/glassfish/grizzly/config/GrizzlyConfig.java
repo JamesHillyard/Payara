@@ -100,9 +100,9 @@ public class GrizzlyConfig {
         synchronized (listeners) {
             for (GrizzlyListener listener : listeners) {
                 try {
-                    logPortStatus("Listener Not Stopped", listener.getPort());
+                    logPortStatus("Shutdown Network | Listener Not Stopped", listener.getPort());
                     listener.stop();
-                    logPortStatus("Listener Stopped", listener.getPort());
+                    logPortStatus("Shutdown Network | Listener Stopped", listener.getPort());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -121,9 +121,9 @@ public class GrizzlyConfig {
         synchronized (listeners) {
             for (GrizzlyListener listener : listeners) {
                 try {
-                    logPortStatus("Listener Not Stopped", listener.getPort());
+                    logPortStatus("Shutdown | Listener Not Stopped", listener.getPort());
                     listener.stop();
-                    logPortStatus("Listener Stopped", listener.getPort());
+                    logPortStatus("Shutdown | Listener Stopped", listener.getPort());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
